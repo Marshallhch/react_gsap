@@ -2,8 +2,10 @@ import { Canvas } from '@react-three/fiber';
 import AnimatedHeaderSection from '../components/AnimatedHeaderSection';
 import { Planet } from '../components/Planet';
 import { Environment, Float, Lightformer } from '@react-three/drei';
+import { useMediaQuery } from 'react-responsive';
 
 const Hero = () => {
+  const isMobile = useMediaQuery({ maxWidth: 853 });
   const text = `I help growing brands and startups gain an
 unfair advantage through premium
 results driven webs/apps`;
@@ -26,7 +28,7 @@ results driven webs/apps`;
           <ambientLight intensity={0.5} />
 
           <Float speed={0.5}>
-            <Planet />
+            <Planet scale={isMobile ? 0.7 : 1} />
           </Float>
 
           <Environment resolution={256}>
