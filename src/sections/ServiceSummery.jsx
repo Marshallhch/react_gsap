@@ -1,19 +1,16 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-
 gsap.registerPlugin(ScrollTrigger);
-
-const ServiceSummery = () => {
+const ServiceSummary = () => {
   useGSAP(() => {
     gsap.to('#title-service-1', {
       xPercent: 20,
       scrollTrigger: {
         target: '#title-service-1',
-        scrub: true, // 스크롤에 따라 부드럽게 이동
+        scrub: true, // 스크롤에 따라 애니메이션이 부드럽게 따라감
       },
     });
-
     gsap.to('#title-service-2', {
       xPercent: -30,
       scrollTrigger: {
@@ -21,17 +18,15 @@ const ServiceSummery = () => {
         scrub: true,
       },
     });
-
     gsap.to('#title-service-3', {
-      xPercent: 100,
+      xPercent: 50,
       scrollTrigger: {
         target: '#title-service-3',
         scrub: true,
       },
     });
-
     gsap.to('#title-service-4', {
-      xPercent: -100,
+      xPercent: -50,
       scrollTrigger: {
         target: '#title-service-4',
         scrub: true,
@@ -41,14 +36,14 @@ const ServiceSummery = () => {
   return (
     <section className="mt-20 overflow-hidden font-light leading-snug text-center mb-42 contact-text-responsive">
       <div id="title-service-1">
-        <p>Architacture</p>
+        <p>Architucture</p>
       </div>
       <div
         id="title-service-2"
         className="flex items-center justify-center gap-3 translate-x-16"
       >
-        <p>Development</p>
-        <div className="w-10 md:w-32 bg-gold h-1" />
+        <p className="font-normal">Development</p>
+        <div className="w-10 h-1 md:w-32 bg-gold" />
         <p>Deployment</p>
       </div>
       <div
@@ -56,9 +51,9 @@ const ServiceSummery = () => {
         className="flex items-center justify-center gap-3 -translate-x-48"
       >
         <p>APIs</p>
-        <div className="w-10 md:w-32 bg-gold h-1" />
+        <div className="w-10 h-1 md:w-32 bg-gold" />
         <p className="italic">Frontends</p>
-        <div className="w-10 md:w-32 bg-gold h-1" />
+        <div className="w-10 h-1 md:w-32 bg-gold" />
         <p>Scalability</p>
       </div>
       <div id="title-service-4" className="translate-x-48">
@@ -68,4 +63,4 @@ const ServiceSummery = () => {
   );
 };
 
-export default ServiceSummery;
+export default ServiceSummary;
