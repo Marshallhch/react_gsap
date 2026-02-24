@@ -1,4 +1,7 @@
+import { Canvas } from '@react-three/fiber';
 import AnimatedHeaderSection from '../components/AnimatedHeaderSection';
+import { Planet } from '../components/Planet';
+import { Environment, Float, Lightformer } from '@react-three/drei';
 
 const Hero = () => {
   const text = `I help growing brands and startups gain an
@@ -12,6 +15,50 @@ results driven webs/apps`;
         text={text}
         textColor={'text-black'}
       />
+      <figure
+        className="absolute inset-0 -z-50"
+        style={{ width: '100vw', height: '100vh' }}
+      >
+        <Canvas
+          shadow
+          camera={{ position: [0, 0, -10], fov: 17.5, near: 1, far: 20 }}
+        >
+          <ambientLight intensity={0.5} />
+
+          <Float speed={0.5}>
+            <Planet />
+          </Float>
+
+          <Environment resolution={256}>
+            <group rotation={[-Math.PI / 3, 4, 1]}>
+              <Lightformer
+                form={'circle'}
+                intensity={2}
+                position={[0, 5, -9]}
+                scale={10}
+              />
+              <Lightformer
+                form={'circle'}
+                intensity={2}
+                position={[0, 3, 1]}
+                scale={10}
+              />
+              <Lightformer
+                form={'circle'}
+                intensity={2}
+                position={[-5, -1, -1]}
+                scale={10}
+              />
+              <Lightformer
+                form={'circle'}
+                intensity={2}
+                position={[10, 1, 0]}
+                scale={10}
+              />
+            </group>
+          </Environment>
+        </Canvas>
+      </figure>
     </section>
   );
 };
