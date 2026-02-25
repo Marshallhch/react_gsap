@@ -22,7 +22,7 @@ results driven webs/apps`;
         style={{ width: '100vw', height: '100vh' }}
       >
         <Canvas
-          shadow
+          shadow="true"
           camera={{ position: [0, 0, -10], fov: 17.5, near: 1, far: 20 }}
         >
           <ambientLight intensity={0.5} />

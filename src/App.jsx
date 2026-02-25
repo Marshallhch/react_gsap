@@ -5,6 +5,7 @@ import ServiceSummery from './sections/ServiceSummery';
 import Services from './sections/Services';
 import About from './sections/About';
 import Works from './sections/Works';
+import ContactSummery from './sections/ContactSummery';
 
 const App = () => {
   return (
@@ -15,8 +16,9 @@ const App = () => {
       <Services />
       <About />
       <Works />
+      <ContactSummery />
       <section id="home" className="h-screen bg-gray-500"></section>
-      <section id="services" className="h-screen bg-indigo-500"></section>
+      {/* <section id="services" className="h-screen bg-indigo-500"></section> */}
       {/* <section id="about" className="h-screen bg-gray-500"></section> */}
     </ReactLenis>
   );
